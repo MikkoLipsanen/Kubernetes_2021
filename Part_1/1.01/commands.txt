@@ -1,0 +1,5 @@
+# Creating a Deployment
+kubectl create deployment main-app-dep --image=mlipsan/main_app 
+
+# Checking the output
+kubectl logs -f main-app-dep-58fdcb6d57-q9kzz
