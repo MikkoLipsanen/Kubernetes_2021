@@ -1,0 +1,6 @@
+# Creating a Deployment
+kubectl create deployment server --image=mlipsan/server
+
+# Checking the output
+kubectl logs -f server-5f6984b46-sdvp2
+
