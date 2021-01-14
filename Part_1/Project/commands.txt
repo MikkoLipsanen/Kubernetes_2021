@@ -1,6 +1,23 @@
-# Creating a Deployment
-kubectl create deployment server --image=mlipsan/server
+Exercise 1.02:
 
-# Checking the output
-kubectl logs -f server-5f6984b46-sdvp2
+- Creating a Deployment:
+$ kubectl create deployment server --image=mlipsan/server
+
+- Checking the output:
+$ kubectl logs -f server-5f6984b46-sdvp2
+
+
+Exercise 1.06:
+
+-Deleting the old cluster:
+$ k3d cluster delete
+
+-Opening the ports:
+$ k3d cluster create --port '8082:30080@agent[0]' -p 8081:80@loadbalancer --agents 2
+
+-Applying the service:
+$ kubectl apply -f manifests/service.yaml
+
+-Applying the deployment:
+$ kubectl apply -f manifests/deployment.yaml
 
