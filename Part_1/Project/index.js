@@ -1,10 +1,13 @@
-const http = require('http')
+const express = require('express')
+const app = express()
 
-const app = http.createServer((request, response) => {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.end('Hello!')
+app.use(express.json()) 
+
+app.get('/', (req, res) => {
+    res.send('<h1>Hello Kubernetes!</h1>')
 })
-  
-const port = 3001
-app.listen(port)
-console.log(`Server started in port ${port}`)
+
+const PORT = 3003
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})

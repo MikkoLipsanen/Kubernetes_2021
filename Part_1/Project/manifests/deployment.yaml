@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: server
-          image: mlipsan/server
+          image: mlipsan/server:1.05
